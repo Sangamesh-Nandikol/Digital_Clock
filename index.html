@@ -44,8 +44,16 @@
             let h= da.getHours();
            let m= da.getMinutes();
            let s= da.getSeconds();
+           let amPm= h >= 12 ? "PM" : "AM";
 
-           return `${h} : ${m} : ${s}`;
+           h=h%12;
+           h= h == 0 ?12 : H;
+
+           s=s >9 ? s : "0" + s;
+
+           m=m>9?m:"0"+m;
+
+           return `${h} : ${m} : ${s} : ${amPm}`;
 
         };
 
